@@ -2,7 +2,11 @@
   <div id="app">
     <Btn v-show="!isOpenMap" @click="onOpenMap">Open map</Btn>
     <Map :isOpen="isOpenMap">
-      <Btn :btnMapstyled="true" @click="onOpenMap"></Btn>
+      <Btn :btnMapstyled="true" @click="onOpenMap">
+        <svg width="30px" height="30px">
+          <use href="./assets/images/sprite.svg#icon-close"></use>
+        </svg>
+      </Btn>
     </Map>
   </div>
 </template>

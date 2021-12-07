@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 .btn {
   padding: 5px 20px;
-  color: rgb(61, 61, 61);
+  color: rgb(255, 115, 0);
   background-color: rgb(149, 234, 255);
   border: none;
   border-radius: 5px;
@@ -37,7 +37,8 @@ export default {
   cursor: pointer;
 
   &:hover,
-  :focus {
+  &:focus {
+    color: rgb(255, 166, 0);
     background-color: rgb(124, 255, 205);
     box-shadow: 0px 0px 5px 0px rgb(38, 0, 255);
   }
@@ -46,10 +47,16 @@ export default {
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 20px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    fill: rgb(255, 115, 0);
     border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      fill: rgb(255, 166, 0);
+      background-color: rgb(124, 255, 205);
+      box-shadow: 0px 0px 5px 0px rgb(38, 0, 255);
+    }
   }
 }
 </style>
