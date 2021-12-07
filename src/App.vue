@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Btn v-show="!isOpenMap" @click="onOpenMap">Open map</Btn>
-    <Map :isOpen="isOpenMap">Map</Map>
+    <Map :isOpen="isOpenMap">
+      <Btn :btnMapstyled="true" @click="onOpenMap"></Btn>
+    </Map>
   </div>
 </template>
 
@@ -31,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 #app {
+  padding: 30px;
   text-align: center;
 }
 </style>

@@ -1,5 +1,9 @@
 <template>
-  <button class="btn" :type="type" @click="$emit('click', $event)">
+  <button
+    :class="{ btn: true, btn_map: btnMapstyled }"
+    :type="type"
+    @click="$emit('click', $event)"
+  >
     <slot></slot>
   </button>
 </template>
@@ -12,6 +16,11 @@ export default {
     type: {
       type: String,
       default: "button",
+    },
+
+    btnMapstyled: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -31,6 +40,16 @@ export default {
   :focus {
     background-color: rgb(124, 255, 205);
     box-shadow: 0px 0px 5px 0px rgb(38, 0, 255);
+  }
+
+  &_map {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
   }
 }
 </style>
