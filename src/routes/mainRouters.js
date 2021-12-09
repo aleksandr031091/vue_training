@@ -2,7 +2,7 @@ import HomePage from "../pages/home_page/HomePage.vue";
 import MapPage from "../pages/map_page/MapPage.vue";
 import AbautPage from "../pages/abaut_page/AbautPage.vue";
 
-const routes = [
+const mainRoutes = [
   {
     path: "/",
     name: "home",
@@ -23,4 +23,4 @@ const routes = [
   },
 ];
 
-export default routes;
+export default mainRoutes;

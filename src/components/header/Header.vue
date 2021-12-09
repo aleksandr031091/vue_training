@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-    <h2>header</h2>
     <Navigation />
   </div>
 </template>
@@ -18,10 +17,9 @@ export default {
 <style lang="scss" scoped>
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
-  height: 50px;
-  border-bottom: 1px solid orange;
+  border-bottom: 1px solid rgb(255, 166, 1);
+  background-color: rgb(223, 223, 223);
 }
 </style>

@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  padding: 0 30px;
+  padding: 30px;
   min-height: calc(100vh - 150px);
 }
 </style>

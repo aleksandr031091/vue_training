@@ -4,7 +4,7 @@
     :type="type"
     @click="$emit('click', $event)"
   >
-    <slot></slot>
+    <slot>send</slot>
   </button>
 </template>
 

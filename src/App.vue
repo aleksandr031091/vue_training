@@ -20,9 +20,3 @@ export default {
   components: { Container, Header, Main, Footer },
 };
 </script>
-
-<style lang="scss" scoped>
-#app {
-  text-align: center;
-}
-</style>
