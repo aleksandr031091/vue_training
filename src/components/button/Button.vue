@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="{ btn: true, btn_map: btnMapstyled }"
+    :class="{ button: true, button_map: btnMapstyled }"
     :type="type"
     @click="$emit('click', $event)"
   >
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "Btn",
+  name: "Button",
 
   props: {
     type: {
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn {
+.button {
   padding: 5px 20px;
   color: rgb(255, 115, 0);
   background-color: rgb(149, 234, 255);
