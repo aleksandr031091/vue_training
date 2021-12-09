@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <Button class="btn" @click="onClickExample">example show</Button>
+    <Button class="btn" @click="show = !show">example show</Button>
     <transition name="footer_title_example">
       <h2 v-show="show">footer</h2>
     </transition>
@@ -18,13 +18,6 @@ export default {
   },
 
   components: { Button },
-
-  methods: {
-    onClickExample() {
-      console.log(this.show);
-      this.show = !this.show;
-    },
-  },
 };
 </script>
 
@@ -34,7 +27,7 @@ export default {
   align-items: center;
   padding: 0 50px;
   height: 100px;
-  border-top: 1px solid tomato;
+  border-top: 1px solid rgb(255, 97, 69);
 }
 .btn {
   margin-right: 10px;

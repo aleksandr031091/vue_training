@@ -8,7 +8,7 @@ import mainRoutes from "./routes/mainRouters";
 Vue.config.productionTip = false;
 Vue.use(Router);
 
-const router = new Router({ routes: mainRoutes });
+const router = new Router({ routes: mainRoutes, mode: "history" });
 
 new Vue({
   render: (h) => h(App),
