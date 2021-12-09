@@ -16,10 +16,12 @@ export default {
 
 <style lang="scss" scoped>
 .map {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: calc(100vh - 60px);
-  background-color: silver;
+  height: calc(100vh);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 20px 1px rgb(94, 94, 94);
 }
 </style>
