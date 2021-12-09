@@ -6,7 +6,7 @@
         v-for="route of routes"
         :key="route.path"
       >
-        <router-link class="router_link" :to="route.path">{{
+        <router-link class="router_link" :to="{ name: route.name }">{{
           route.name
         }}</router-link>
       </li>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import mainRoutes from "../../route/router";
+import mainRoutes from "../../routes/mainRouters";
 
 export default {
   name: "Navigation",
