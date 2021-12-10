@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="{ button: true, button_map: btnMapstyled }"
+    :class="{ button: true, button_modal: btnMapstyled }"
     :type="type"
     @click="$emit('click', $event)"
   >
@@ -43,7 +43,7 @@ export default {
     box-shadow: 0px 0px 5px 0px rgb(38, 0, 255);
   }
 
-  &_map {
+  &_modal {
     position: absolute;
     top: 10px;
     right: 10px;

@@ -20,6 +20,6 @@ export default {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid rgb(255, 166, 1);
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(238, 255, 163);
 }
 </style>

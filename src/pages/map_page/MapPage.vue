@@ -1,34 +1,35 @@
 <template>
   <div>
-    <Button @click="onOpenMap">open map</Button>
-    <Map :isOpen="isOpenMap">
-      <Button :btnMapstyled="true" @click="onOpenMap">
-        <svg width="30px" height="30px">
-          <use href="../../assets/images/sprite.svg#icon-close"></use>
-        </svg>
-      </Button>
-    </Map>
+    <Button @click="onOpenModal">open map</Button>
+    <Modal :isOpen="isOpenModal">
+      <template #button>
+        <Button :btnMapstyled="isOpenModal" @click="onOpenModal">
+          <svg width="30px" height="30px">
+            <use href="../../assets/images/sprite.svg#icon-close"></use>
+          </svg> </Button
+      ></template>
+    </Modal>
   </div>
 </template>
 
 <script>
 import Button from "../../components/button/Button.vue";
-import Map from "../../components/map/Map.vue";
+import Modal from "../../components/modal/Modal.vue";
 
 export default {
   name: "MapPage",
 
-  components: { Button, Map },
+  components: { Button, Modal },
 
   data() {
     return {
-      isOpenMap: false,
+      isOpenModal: false,
     };
   },
 
   methods: {
-    onOpenMap() {
-      this.isOpenMap = !this.isOpenMap;
+    onOpenModal() {
+      this.isOpenModal = !this.isOpenModal;
     },
   },
 };
