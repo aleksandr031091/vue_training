@@ -39,6 +39,10 @@
 import Button from "../../components/button/Button.vue";
 import Modal from "../../components/modal/Modal.vue";
 import CustomInput from "../../components/shared/custom_input/CustomInput.vue";
+import { mapMutations } from "vuex";
+
+import avatar from "../../assets/images/dafaultAvatar.png";
+import { nanoid } from "nanoid";
 
 export default {
   name: "HomePage",
@@ -51,15 +55,27 @@ export default {
       name: "",
       phone: "",
       email: "",
+      image: avatar,
     };
   },
 
   methods: {
+    ...mapMutations(["setContact"]),
+
     onHqndleClickAdd() {
       this.isOpenAside = !this.isOpenAside;
     },
 
     onSubmitForm() {
+      const contact = {
+        id: nanoid(),
+        name: this.name,
+        phone: +this.phone,
+        email: this.email,
+        imgSrc: this.image,
+      };
+
+      this.setContact(contact);
       this.resetData();
       this.onHqndleClickAdd();
     },

@@ -1,7 +1,7 @@
 <template>
   <label class="label">
     {{ label }}
-    <input type="text" :class="{ input: true }" v-on="listener" />
+    <input :type="type" :class="{ input: true }" v-on="listener" />
   </label>
 </template>
 
@@ -11,6 +11,10 @@ export default {
 
   props: {
     label: String,
+    type: {
+      type: String,
+      default: "text",
+    },
   },
 
   computed: {

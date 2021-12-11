@@ -7,7 +7,7 @@
         :key="route.path"
       >
         <router-link class="router_link" :to="{ name: route.name }">{{
-          route.name
+          route.name === "contact" ? null : route.name
         }}</router-link>
       </li>
     </ul>

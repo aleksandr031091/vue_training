@@ -1,25 +1,20 @@
 <template>
   <div>
     <h2>abaut page</h2>
-    <ContactItem :name="name" :phone="phone" :email="email" :imgSrc="avatar" />
+    <ContactsList :items="getAllContacts" />
   </div>
 </template>
 
 <script>
-import avatar from "../../assets/images/dafaultAvatar.png";
-import ContactItem from "../../components/contact_item/ContactItem.vue";
+import ContactsList from "../../components/contact_list/ContactList.vue";
+import { mapGetters } from "vuex";
+
 export default {
   name: "AbautPage",
 
-  data() {
-    return {
-      name: "sasha",
-      phone: 12345,
-      email: "sahsa@mai.ru",
-      avatar: avatar,
-    };
-  },
-  components: { ContactItem },
+  components: { ContactsList },
+
+  computed: mapGetters(["getAllContacts"]),
 };
 </script>
 
