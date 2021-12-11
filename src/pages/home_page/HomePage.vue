@@ -9,9 +9,24 @@
         :aasideBarStyled="isOpenAside"
       >
         <form @submit.prevent="onSubmitForm" class="form">
-          <CustomInput class="form_item" />
-          <CustomInput class="form_item" />
-          <CustomInput class="form_item" />
+          <CustomInput
+            label="name"
+            class="form_item"
+            type="text"
+            v-model.trim="name"
+          />
+          <CustomInput
+            label="phone"
+            class="form_item"
+            type="number"
+            v-model.trim="phone"
+          />
+          <CustomInput
+            label="email"
+            class="form_item"
+            type="email"
+            v-model.trim="email"
+          />
 
           <Button type="submit">send</Button>
         </form>
@@ -31,7 +46,12 @@ export default {
   components: { Button, Modal, CustomInput },
 
   data() {
-    return { isOpenAside: false };
+    return {
+      isOpenAside: false,
+      name: "",
+      phone: "",
+      email: "",
+    };
   },
 
   methods: {
@@ -40,7 +60,12 @@ export default {
     },
 
     onSubmitForm() {
-      this.isOpenAside = false;
+      this.resetData();
+      this.onHqndleClickAdd();
+    },
+
+    resetData() {
+      (this.name = ""), (this.phone = ""), (this.email = "");
     },
   },
 };

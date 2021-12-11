@@ -1,6 +1,7 @@
 import HomePage from "../pages/home_page/HomePage.vue";
 import MapPage from "../pages/map_page/MapPage.vue";
 import AbautPage from "../pages/abaut_page/AbautPage.vue";
+import ErrorPage from "../pages/error_page/ErrorPage.vue";
 
 const mainRoutes = [
   {
@@ -20,6 +21,11 @@ const mainRoutes = [
     name: "abaut",
     component: AbautPage,
     props: true,
+  },
+  {
+    path: "*",
+    // name: "error",
+    component: ErrorPage,
   },
 ];
 
