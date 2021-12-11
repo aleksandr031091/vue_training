@@ -1,12 +1,12 @@
 <template>
   <ul class="contacts_list">
     <ContactItem
-      v-for="{ id, name, phone, number, imgSrc } of items"
+      v-for="{ id, name, phone, email, imgSrc } of items"
       :key="id"
       :id="id"
       :name="name"
       :phone="phone"
-      :number="number"
+      :email="email"
       :imgSrc="imgSrc"
     />
   </ul>

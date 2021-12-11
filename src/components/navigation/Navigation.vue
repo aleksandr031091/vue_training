@@ -3,12 +3,10 @@
     <ul class="navigation_list">
       <li
         class="navigation_list_item"
-        v-for="route of routes"
-        :key="route.path"
+        v-for="{ path, name } of routes"
+        :key="path"
       >
-        <router-link class="router_link" :to="{ name: route.name }">{{
-          route.name === "contact" ? null : route.name
-        }}</router-link>
+        <router-link class="router_link" :to="{ name }">{{ name }}</router-link>
       </li>
     </ul>
   </div>
@@ -20,8 +18,10 @@ import mainRoutes from "../../routes/mainRouters";
 export default {
   name: "Navigation",
 
-  data() {
-    return { routes: [...mainRoutes] };
+  computed: {
+    routes() {
+      return mainRoutes.filter((route) => route.name !== "contact");
+    },
   },
 };
 </script>

@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <h1>contact page</h1>
+  <div v-if="contact">
+    <h1>{{ contact.name }}</h1>
+    <p>{{ contact.phone }}</p>
+    <p>{{ contact.email }}</p>
+    <img :src="contact.imgSrc" alt="avatar" width="500px" />
   </div>
 </template>
 
@@ -9,10 +12,6 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "ContactPage",
-
-  mounted() {
-    console.log(this.getAllContacts);
-  },
 
   computed: {
     ...mapGetters(["getAllContacts"]),
