@@ -1,7 +1,7 @@
 <template>
   <label class="label">
     {{ label }}
-    <input :type="type" :class="{ input: true }" v-on="listener" />
+    <input :type="type" :class="{ input: true }" v-on="listener" min="10" />
   </label>
 </template>
 

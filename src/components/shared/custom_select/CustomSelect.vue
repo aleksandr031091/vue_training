@@ -1,14 +1,17 @@
 <template>
-  <select v-on="listener">
-    <option
-      v-for="item of formatedItems"
-      :key="item.value"
-      :value="item.value"
-      :selected="item.selected"
-    >
-      {{ item.label }}
-    </option>
-  </select>
+  <label class="custom_select">
+    {{ label }}
+    <select class="custom_select input" v-on="listener">
+      <option
+        v-for="item of formatedItems"
+        :key="item.value"
+        :value="item.value"
+        :selected="item.selected"
+      >
+        {{ item.label }}
+      </option>
+    </select>
+  </label>
 </template>
 
 <script>
@@ -18,6 +21,11 @@ export default {
   props: {
     items: {
       type: Array,
+    },
+
+    label: {
+      type: String,
+      default: "?",
     },
   },
 
@@ -39,4 +47,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom_select {
+  display: flex;
+  flex-direction: column;
+  color: steelblue;
+
+  &.input {
+    padding: 5px;
+    border: 1px solid rgb(40, 46, 129);
+  }
+}
+</style>

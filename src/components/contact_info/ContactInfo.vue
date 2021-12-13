@@ -2,7 +2,7 @@
   <div>
     <div v-if="info">
       <h1>{{ info.name }}</h1>
-      <p>{{ info.phone }}</p>
+      <p>{{ info.phone !== 0 ? info.phone : null }}</p>
       <p>{{ info.email }}</p>
       <p>{{ info.status }}</p>
       <img :src="info.imgSrc" alt="avatar" width="500px" />

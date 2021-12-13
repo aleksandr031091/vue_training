@@ -14,13 +14,13 @@
             class="form_item"
             type="text"
             v-model.trim="name"
-            :aria-required="true"
           />
           <CustomInput
             label="phone"
             class="form_item"
             type="number"
             v-model.trim="phone"
+            min="3"
           />
           <CustomInput
             label="email"
@@ -32,7 +32,7 @@
           <CustomSelect
             class="form_item"
             :items="[
-              { value: '123', label: 'are you fell', selected: true },
+              { value: '123', label: '', selected: true },
               'super',
               'super super',
               'super very good',
@@ -88,8 +88,42 @@ export default {
         email: this.email,
         imgSrc: this.image,
         status: this.selectValue,
+        reviews: [
+          {
+            id: nanoid(),
+            name: "sasha",
+            description:
+              "qweqweqwe qweqweqweqweqweqw eqweqweqweqweqweqweqweqweqwe qweqweqweqweqweqweqwe qweqweqweqweqweqwe",
+            total: 3,
+          },
+          {
+            id: nanoid(),
+            name: "sasha-sasha",
+            description: "qweqweq weqweqweqweqweqweq weqweqweqwe",
+            total: 5,
+          },
+          {
+            id: nanoid(),
+            name: "sasha-sashasasha",
+            description:
+              "qweqweqweqweqweqw eqweqweqweqweqweqweqw eqweqweqweqweqwe",
+            total: 1,
+          },
+          {
+            id: nanoid(),
+            name: "sasha-sashasasha",
+            description: "qweeqweqw eqweqwqweqweqweqw eqweqweqweqweqwe",
+            total: 2.5,
+          },
+          {
+            id: nanoid(),
+            name: "sasha-sashasasha",
+            description: "qweqweqweqweqweqw eqweqweeqw eqweeqwe",
+            total: 2,
+          },
+        ],
       };
-      console.log(this.selectValue);
+
       this.setContact(contact);
       this.resetData();
       this.onHqndleClickAdd();
