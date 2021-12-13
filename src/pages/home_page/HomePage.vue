@@ -14,19 +14,21 @@
             class="form_item"
             type="text"
             v-model.trim="name"
+            :rules="rules"
           />
           <CustomInput
             label="phone"
             class="form_item"
             type="number"
             v-model.trim="phone"
-            min="3"
+            :rules="rules"
           />
           <CustomInput
             label="email"
             class="form_item"
             type="email"
             v-model.trim="email"
+            :rules="rules"
           />
 
           <CustomSelect
@@ -52,15 +54,19 @@ import Button from "../../components/button/Button.vue";
 import Modal from "../../components/modal/Modal.vue";
 import CustomInput from "../../components/shared/custom_input/CustomInput.vue";
 import CustomSelect from "../../components/shared/custom_select/CustomSelect.vue";
+
 import { mapMutations } from "vuex";
+import {
+  isRequired,
+  charMaxLimit,
+  charMinLimit,
+} from "../../utils/validationRules";
 
 import avatar from "../../assets/images/dafaultAvatar.png";
 import { nanoid } from "nanoid";
 
 export default {
   name: "HomePage",
-
-  components: { Button, Modal, CustomInput, CustomSelect },
 
   data() {
     return {
@@ -71,6 +77,14 @@ export default {
       image: avatar,
       selectValue: "",
     };
+  },
+
+  components: { Button, Modal, CustomInput, CustomSelect },
+
+  computed: {
+    rules() {
+      return [isRequired, charMaxLimit(10), charMinLimit(5)];
+    },
   },
 
   methods: {
