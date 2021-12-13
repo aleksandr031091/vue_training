@@ -14,6 +14,7 @@
             class="form_item"
             type="text"
             v-model.trim="name"
+            :aria-required="true"
           />
           <CustomInput
             label="phone"
@@ -28,6 +29,17 @@
             v-model.trim="email"
           />
 
+          <CustomSelect
+            class="form_item"
+            :items="[
+              { value: '123', label: 'are you fell', selected: true },
+              'super',
+              'super super',
+              'super very good',
+            ]"
+            v-model="selectValue"
+          />
+
           <Button type="submit">send</Button>
         </form>
       </Modal>
@@ -39,6 +51,7 @@
 import Button from "../../components/button/Button.vue";
 import Modal from "../../components/modal/Modal.vue";
 import CustomInput from "../../components/shared/custom_input/CustomInput.vue";
+import CustomSelect from "../../components/shared/custom_select/CustomSelect.vue";
 import { mapMutations } from "vuex";
 
 import avatar from "../../assets/images/dafaultAvatar.png";
@@ -47,7 +60,7 @@ import { nanoid } from "nanoid";
 export default {
   name: "HomePage",
 
-  components: { Button, Modal, CustomInput },
+  components: { Button, Modal, CustomInput, CustomSelect },
 
   data() {
     return {
@@ -56,6 +69,7 @@ export default {
       phone: "",
       email: "",
       image: avatar,
+      selectValue: "",
     };
   },
 
@@ -73,8 +87,9 @@ export default {
         phone: +this.phone,
         email: this.email,
         imgSrc: this.image,
+        status: this.selectValue,
       };
-
+      console.log(this.selectValue);
       this.setContact(contact);
       this.resetData();
       this.onHqndleClickAdd();

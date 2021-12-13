@@ -1,29 +1,23 @@
 <template>
-  <div v-if="contact">
-    <h1>{{ contact.name }}</h1>
-    <p>{{ contact.phone }}</p>
-    <p>{{ contact.email }}</p>
-    <img :src="contact.imgSrc" alt="avatar" width="500px" />
-  </div>
+  <div><ContactInfo :info="contact" /></div>
 </template>
 
 <script>
+import ContactInfo from "../../components/contact_info/ContactInfo.vue";
 import { mapGetters } from "vuex";
 
 export default {
   name: "ContactPage",
 
+  components: { ContactInfo },
+
   computed: {
     ...mapGetters(["getAllContacts"]),
 
     contact() {
-      return this.getContact(this.getAllContacts, this.$route.params.id);
-    },
-  },
-
-  methods: {
-    getContact(contacts, id) {
-      return contacts.find((contact) => contact.id === id);
+      return this.getAllContacts.find(
+        (contact) => contact.id === this.$route.params.id
+      );
     },
   },
 };
