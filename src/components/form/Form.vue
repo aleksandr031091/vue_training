@@ -1,7 +1,8 @@
 <template>
-  <form>
-    <slot :name="title"></slot>
+  <form class="form" @submit.prevent="handleSubmit">
+    <slot name="title"></slot>
     <slot></slot>
+    <slot name="button"></slot>
   </form>
 </template>
 
@@ -9,10 +10,17 @@
 export default {
   name: "Form",
 
-  props: {
-    title: String,
+  methods: {
+    handleSubmit() {
+      this.$emit("submit", "form submited");
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.form {
+  width: 500px;
+  margin-bottom: 50px;
+}
+</style>

@@ -7,7 +7,6 @@
       v-bind="$attrs"
     />
     <span v-if="!isValid" class="label_validate">{{ error }}</span>
-    <span>{{ isValid }}</span>
   </label>
 </template>
 
@@ -16,6 +15,12 @@ export default {
   name: "CustomInput",
 
   inheritAttrs: false,
+
+  inject: {
+    form: {
+      default: null,
+    },
+  },
 
   data() {
     return {
@@ -41,6 +46,16 @@ export default {
     },
 
     label: String,
+  },
+
+  mounted() {
+    if (!this.form) return;
+    this.form.registerInput(this);
+  },
+
+  beforeDestroy() {
+    if (!this.form) return;
+    this.form.unRegisterInput(this);
   },
 
   watch: {
@@ -72,10 +87,9 @@ export default {
       });
     },
 
-    // validateInputStyle(val) {
-    //   !val && true;
-    //   false;
-    // },
+    reset() {
+      this.$emit("input", "");
+    },
   },
 };
 </script>
